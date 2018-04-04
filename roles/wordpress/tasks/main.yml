@@ -13,7 +13,7 @@
 - name: Renomeia o arquivo de configuracao de exemplo
   command: mv /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php creates=/var/www/wordpress/wp-config.php
   
-- name: Atualiza a configuracao WordPress
+- name: Atualiza a configuracao do WordPress
   lineinfile: dest=/var/www/wordpress/wp-config.php regexp="{{ item.regexp }}" line="{{ item.line }}"
   with_items:
   - {'regexp': "define\\('DB_NAME', '(.)+'\\);", 'line': "define('DB_NAME', '{{wp_mysql_db}}');"}     
