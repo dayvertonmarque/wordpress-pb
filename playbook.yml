@@ -1,3 +1,4 @@
+#Playbook para automatizar a instalação do WordPress com um Banco de dados
 ---
 - hosts: wordpress
   remote_user: day
